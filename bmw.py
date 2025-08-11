@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from photo import *
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.linear_model import LogisticRegression
 
