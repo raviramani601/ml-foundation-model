@@ -2,3 +2,8 @@ streamlit
 pandas
 langchain
 pillow
+scikit-learn==1.3.2
+numpy
+
+
+
