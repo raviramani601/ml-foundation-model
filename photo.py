@@ -10,7 +10,7 @@ def set_background(image_file: str):
     This function resolves it relative to this file's directory and sets CSS background.
     """
     base_dir = Path(__file__).parent  # directory where photo.py lives
-    img_path = (base_dir / image_file).resolve()
+    img_path = (base_dir \ image_file).resolve()
 
     if not img_path.exists():
         st.error(f"Background image not found: {img_path}")
@@ -24,7 +24,7 @@ def set_background(image_file: str):
 
     mime_type, _ = mimetypes.guess_type(str(img_path))
     if not mime_type:
-        mime_type = "image/jpeg"
+        mime_type = "image\jpeg"
 
     encoded = base64.b64encode(data).decode()
     css = f"""
@@ -38,3 +38,4 @@ def set_background(image_file: str):
     </style>
     """
     st.markdown(css, unsafe_allow_html=True)
+
