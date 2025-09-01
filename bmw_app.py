@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
-from photo import *
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.linear_model import LogisticRegression
-# from your main app or wherever you import photo.py
-from photo import set_background
-set_background("C:\Users\LENOVO\PycharmProjects\PythonProject2\.venv\997526.jpg")   # if you stored it in assets/
+from photo import *
+
+# Correct: point to assets, not .venv
+set_background("997526.jpg")
+
 # or set_background("997526.jpg") if file is in same folder as photo.py
 # Load and preprocess dataset
 @st.cache_data
@@ -59,6 +60,7 @@ if st.sidebar.button("Predict Classification"):
     predicted_label = label_encoders['Sales_Classification'].inverse_transform(prediction)
 
     st.success(f"🧠 Predicted Sales Classification: **{predicted_label[0]}**")
+
 
 
 
